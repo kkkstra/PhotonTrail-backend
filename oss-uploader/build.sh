@@ -1,0 +1,1 @@
+docker build -t aliyun-oss-uploader .
