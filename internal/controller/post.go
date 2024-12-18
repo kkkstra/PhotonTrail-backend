@@ -73,7 +73,7 @@ func GetPosts(c *gin.Context) {
 		return
 	}
 
-	var postList []response.PostData
+	var postList = []response.PostData{}
 	for _, post := range *posts {
 		// get images
 		images, err := p.GetImages(global.DBEngine, post.ID)
@@ -251,7 +251,7 @@ func GetUserPosts(c *gin.Context) {
 		return
 	}
 
-	var postList []response.PostData
+	var postList = []response.PostData{}
 	for _, post := range *posts {
 		// get images
 		images, err := p.GetImages(global.DBEngine, post.ID)
