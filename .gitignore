@@ -31,3 +31,4 @@ go.work
 configs/default.yaml
 oss-uploader/server.sh
 data/
+bin/
