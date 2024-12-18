@@ -9,6 +9,9 @@ services:
       - photon_trail
     depends_on:
       - db
+      - sts
+    environment:
+      - TZ=Asia/Shanghai
     restart: always
   db:
     image: mysql:8
