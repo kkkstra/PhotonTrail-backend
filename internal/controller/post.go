@@ -238,7 +238,7 @@ func DeletePost(c *gin.Context) {
 }
 
 func GetUserPosts(c *gin.Context) {
-	uid := c.Param("uid")
+	uid := c.Param("id")
 	uidInt, err := strconv.Atoi(uid)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, response.CodeInvalidParams, "invalid id", err.Error())
