@@ -3,8 +3,8 @@ app:
   api_prefix: '/api/v1'
   debug: true
 database:
-  username: root
-  password: PhotonTrailB612!@#$
+  username: username
+  password: password
   host: 'db:3306'
   db_name: photon_trail
   charset: utf8
@@ -12,6 +12,6 @@ database:
   max_idle_conns: 10
   max_open_conns: 30
 jwt:
-  key: "PhotonTrailB612!@#$"
-  issuer: "kkkstra.cn"
+  key: key
+  issuer: issuer
   expire: 604800

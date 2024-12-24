@@ -4,32 +4,27 @@
 
 ## **Project Overview**
 
-**PhotonTrail-backend** is the backend system for an AI-powered recruitment platform. It allows companies to manage job listings, resumes, and streamline the hiring process with AI-driven candidate analysis and job matching.
+**PhotonTrail-backend** is a community focused on sharing and interacting with photography works.
 
-This backend is built with **Go** and the **Gin** web framework, with **MySQL** as the database, and uses **JWT** for authentication. It integrates with external AI services to analyze resumes and recommend job candidates efficiently.
+This backend system is built with **Go** and the **Gin** web framework, using **MySQL** as the database, and **JWT** for authentication. The system integrates with OSS STS Token service.
 
 ## **Key Features**
 
 - **User Authentication**: JWT-based login and registration.
-- **Job Management**: Create, update, delete, and search for job postings.
-- **Resume Management**: Upload, analyze, and manage resumes.
-- **AI Integration**: AI-powered resume screening and job matching.
-- **Admin Features**: Manage users, job posts, and resumes.
+- **Post Management**: Create, update, delete, and search for posts.
+- **OSS Integration**: STS Token service for OSS.
 - **RESTful API**: For smooth front-end and back-end interaction.
 
 ## **Project Structure**
 
 ```
-├── AI-service            # AI-related logic and functions
-├── Dockerfile            # Docker setup
+├── Dockerfile            # Dockerfile
 ├── LICENSE               # License file
 ├── README.md             # Project overview and instructions
-├── bin                   # Compiled binaries
 ├── cmd                   # App entry points
 ├── configs               # Config files
 ├── data                  # Data storage
 ├── docker-compose.yml    # Docker Compose config for multi-service setup
-├── docs                  # Documentation (API docs, design notes)
 ├── internal              # Internal code, project-only
 ├── pkg                   # Reusable packages
 └── scripts               # Scripts
@@ -41,13 +36,12 @@ This backend is built with **Go** and the **Gin** web framework, with **MySQL** 
 - **Web Framework**: Gin
 - **Database**: MySQL
 - **Authentication**: JWT
-- **AI Services**: Integrated with external Python-based AI services
 
 ## **Requirements**
 
 - **Go** 1.16+
 - **MySQL** 5.7+
-- **Python** 3.8+ (for AI services)
+- **Python** 3.8+ (for OSS STS Token service)
 - **Docker** (optional, for deployment)
 
 ## **Installation Guide**
@@ -72,7 +66,7 @@ go mod tidy
 Ensure MySQL is running and create the database:
 
 ```sql
-CREATE DATABASE ai_recruitment;
+CREATE DATABASE photon_trail;
 ```
 
 ### **4. Run Database Migrations**
@@ -89,15 +83,16 @@ go run main.go
 
 The server will run at `http://localhost:8001`.
 
-### **7. Start the AI Service**
+### **7. Start the OSS STS TOKEN Service**
 
-If you are using a separate AI service, navigate to the AI service directory and start it:
+Navigate to the `oss-uploader` directory and start the service:
 
 ```bash
-python AI-service/main.py
+cd oss-uploader
+python main.py
 ```
 
-The AI service will run on `http://localhost:5000`.
+The service will run on `http://localhost:8000`.
 
 ## **Deployment**
 
